@@ -1,0 +1,676 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Portfolio styling inspired by Hanselman */
+
+.portfolio-site {
+  background: #fff;
+  color: #252525;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-header {
+  background: #f8f6ef;
+  border-bottom: 1px solid #e9e4d9;
+}
+
+.header-inner {
+  max-width: 1050px;
+  margin: auto;
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.site-logo {
+  font-size: 19px;
+  font-weight: 800;
+  color: #384653;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.site-nav a {
+  color: #555;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.text-link:hover {
+  color: #e65b22;
+}
+
+.home-banner {
+  height: 550px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #302c2a;
+}
+
+.banner-image {
+  object-fit: contain;
+  object-position: center center;
+}
+
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.12),
+      rgba(0, 0, 0, 0.7));
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  padding: 35px 20px 25px;
+}
+
+.banner-content p {
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.banner-content h1 {
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 800;
+  margin: 12px 0;
+}
+
+.banner-content h2 {
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+.content-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.intro-section {
+  display: grid;
+  grid-template-columns: 1fr 230px;
+  gap: 70px;
+  padding-top: 60px;
+  padding-bottom: 65px;
+  align-items: start;
+}
+
+.section-eyebrow {
+  color: #a73c1a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.intro-text h2 {
+  font-size: 29px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.intro-text p:not(.section-eyebrow) {
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 17px;
+  color: #454545;
+}
+
+.intro-photo {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #f2eee8;
+}
+
+.text-link {
+  display: inline-block;
+  color: #e65b22;
+  font-weight: bold;
+  margin-top: 18px;
+  text-decoration: none;
+}
+
+.section-light {
+  background: #f8f8f7;
+  padding: 75px 0;
+}
+
+.section-spacing {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.section-description {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.profession-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.profession-card {
+  padding: 28px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.profession-card h3 {
+  font-size: 19px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.profession-card p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.profession-card .project-tech {
+  margin-top: 20px;
+  color: #a73c1a;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.course-item {
+  background: white;
+  border: 1px solid #e5e5e5;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.site-footer {
+  background: #f8f6ef;
+  padding: 30px 20px;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    gap: 15px;
+  }
+
+  .home-banner {
+    height: 370px;
+  }
+
+  .intro-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .intro-photo {
+    justify-content: flex-start;
+  }
+
+  .profession-grid,
+  .course-list {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 27px;
+  }
+}
+
+
+/* Hanselman-inspired homepage photo gallery */
+
+.hanselman-banner {
+  position: relative;
+  max-width: 1250px;
+  height: 420px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-bottom: 5px solid #e87522;
+  background: #20b9dc;
+}
+
+.banner-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 100%;
+  gap: 7px;
+  padding: 0 7px;
+}
+
+.gallery-panel {
+  position: relative;
+  overflow: hidden;
+  background: #22bbdc;
+}
+
+.gallery-photo {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.gallery-heading {
+  position: absolute;
+  z-index: 2;
+  bottom: 42px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: clamp(38px, 5vw, 65px);
+  font-weight: 800;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .hanselman-banner {
+    height: 380px;
+  }
+
+  .banner-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  .gallery-panel:nth-child(n+3) {
+    display: none;
+  }
+
+  .gallery-heading {
+    bottom: 30px;
+  }
+}
+
+
+/* About Me Page */
+
+.about-banner {
+  position: relative;
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  background: #302c2a;
+}
+
+.about-banner-image {
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.about-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.about-banner h1 {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 85px;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 800;
+  color: white;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 230px;
+  gap: 70px;
+  padding-top: 65px;
+  padding-bottom: 70px;
+  align-items: start;
+}
+
+.about-text h2 {
+  font-size: 29px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.about-text p:not(.section-eyebrow) {
+  color: #454545;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 18px;
+}
+
+.about-profile {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .about-banner {
+    height: 300px;
+  }
+
+  .about-banner h1 {
+    margin-bottom: 55px;
+  }
+
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-profile {
+    justify-content: flex-start;
+  }
+}
+
+
+/* Projects Page */
+
+.projects-hero {
+  background: #f8f6ef;
+  padding: 85px 0;
+  border-bottom: 4px solid #e87522;
+}
+
+.projects-hero h1 {
+  font-size: clamp(36px, 5vw, 55px);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.projects-hero p:not(.section-eyebrow) {
+  max-width: 700px;
+  color: #555;
+  line-height: 1.8;
+  font-size: 17px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.project-card {
+  border: 1px solid #e5e5e5;
+  background: white;
+  padding: 35px;
+}
+
+.project-card h2 {
+  font-size: 25px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.project-description {
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+.project-technologies {
+  color: #a73c1a;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-hero {
+    padding: 55px 0;
+  }
+}
+
+
+/* Customer Experience Achievements */
+
+.achievement-heading {
+  font-size: 21px;
+  font-weight: 700;
+  margin: 25px 0;
+}
+
+.achievement-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.achievement-stats div {
+  background: #f8f6ef;
+  border-bottom: 3px solid #e87522;
+  padding: 25px 15px;
+  text-align: center;
+}
+
+.achievement-stats strong {
+  display: block;
+  font-size: 35px;
+  font-weight: 800;
+  color: #b74720;
+}
+
+.achievement-stats span {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .achievement-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Professional Contact Section */
+
+.contact-section {
+  padding: 80px 0;
+  background: #f8f6ef;
+  border-top: 4px solid #e87522;
+}
+
+.contact-section .section-description {
+  max-width: 800px;
+  margin-bottom: 20px;
+  line-height: 1.9;
+  color: #555;
+}
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.contact-links a {
+  display: inline-block;
+  padding: 14px 25px;
+  background: #a73c1a;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.contact-links a:hover {
+  background: #782b13;
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 50px 0;
+  }
+
+  .contact-links a {
+    text-align: center;
+    flex: 1 1 100%;
+  }
+}
+
+
+/* Find Me Online - Hanselman-inspired */
+
+.online-links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 30px;
+  max-width: 900px;
+}
+
+.online-links a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f6eee8;
+  padding: 12px 15px;
+  color: #873a25;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.online-links a:hover {
+  background: #ecd9cb;
+}
+
+.online-links span {
+  font-size: 19px;
+}
+
+@media (max-width: 768px) {
+  .online-links {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Mobile Homepage Fix */
+@media (max-width: 768px) {
+
+  .hanselman-banner {
+    height: 420px;
+  }
+
+  .banner-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .gallery-panel {
+    display: none;
+  }
+
+  .gallery-panel:first-child {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .gallery-photo {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+  .gallery-heading {
+    font-size: 34px;
+    bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .header-inner {
+    padding: 18px 15px;
+    gap: 15px;
+  }
+
+  .site-nav {
+    gap: 12px;
+  }
+
+  .site-nav a {
+    font-size: 13px;
+  }
+}
