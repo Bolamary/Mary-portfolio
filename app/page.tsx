@@ -61,7 +61,7 @@ export default function Home() {
           {[1, 2, 3, 4].map((item) => (
             <div className="gallery-panel" key={item}>
               <Image
-                src="/img1.jpeg"
+                src="/my.jpeg"
                 alt={`Mary Abioye portrait ${item}`}
                 fill
                 priority={item === 1}
