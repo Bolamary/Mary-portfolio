@@ -9,6 +9,7 @@ const projects = [
         description:
             "A full-stack educational management system featuring administrative functionality, instructor management, authentication, and database integration. Developed with a Next.js frontend, PHP backend APIs, and MySQL database.",
         technologies: "Next.js · React · TypeScript · PHP · MySQL",
+        liveUrl: "https://dynatechx-skills-hub.vercel.app",
     },
     {
         title: "JavaScript Calculator",
@@ -76,6 +77,17 @@ export default function ProjectsPage() {
                             <p className="project-technologies">
                                 {project.technologies}
                             </p>
+
+                            {"liveUrl" in project && project.liveUrl && (
+                                <a
+                                    href={project.liveUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-link"
+                                >
+                                    View Live Website →
+                                </a>
+                            )}
                         </article>
                     ))}
                 </div>
