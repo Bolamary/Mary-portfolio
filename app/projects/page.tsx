@@ -3,13 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 const projects = [
+
     {
         title: "DynaTechX Skills Hub",
         category: "FULL-STACK WEB DEVELOPMENT",
         description:
-            "A full-stack educational management system featuring administrative functionality, instructor management, authentication, and database integration. Developed with a Next.js frontend, PHP backend APIs, and MySQL database.",
+            "Designed, developed, and deployed a full-stack educational management system featuring secure admin, student, and instructor portals. Built student and instructor management, attendance tracking, academic results, payment records, notifications, authentication, and database-driven PHP APIs. Deployed using Vercel and Hostinger.",
         technologies: "Next.js · React · TypeScript · PHP · MySQL",
-        liveUrl: "https://dynatechx-skills-hub.vercel.app",
+        liveUrl: "https://dynatechxhub.com",
     },
     {
         title: "JavaScript Calculator",
